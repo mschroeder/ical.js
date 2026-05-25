@@ -1,15 +1,33 @@
 <!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source: time.js</title><!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="light"><div class="sidebar-container"><div class="sidebar" id="sidebar"><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.module_TimezoneService.html">TimezoneService</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_helpers.html">helpers</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.Binary.html">Binary</a></div><div class="sidebar-section-children"><a href="ICAL.Component.html">Component</a></div><div class="sidebar-section-children"><a href="ICAL.ComponentParser.html">ComponentParser</a></div><div class="sidebar-section-children"><a href="ICAL.Duration.html">Duration</a></div><div class="sidebar-section-children"><a href="ICAL.Event.html">Event</a></div><div class="sidebar-section-children"><a href="ICAL.Period.html">Period</a></div><div class="sidebar-section-children"><a href="ICAL.Property.html">Property</a></div><div class="sidebar-section-children"><a href="ICAL.Recur.html">Recur</a></div><div class="sidebar-section-children"><a href="ICAL.RecurExpansion.html">RecurExpansion</a></div><div class="sidebar-section-children"><a href="ICAL.RecurIterator.html">RecurIterator</a></div><div class="sidebar-section-children"><a href="ICAL.Time.html">Time</a></div><div class="sidebar-section-children"><a href="ICAL.Timezone.html">Timezone</a></div><div class="sidebar-section-children"><a href="ICAL.UtcOffset.html">UtcOffset</a></div><div class="sidebar-section-children"><a href="ICAL.VCardTime.html">VCardTime</a></div><div class="sidebar-section-children"><a href="ICAL.parse.ParserError.html">ParserError</a></div><div class="sidebar-section-children"><a href="InvalidRecurrenceRuleError.html">InvalidRecurrenceRuleError</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-namespaces"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.html">ICAL</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#dark-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">time.js</h1></header><article><pre class="prettyprint source lang-js"><code>/* This Source Code Form is subject to the terms of the Mozilla Public
+    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="light"><div class="sidebar-container"><div class="sidebar" id="sidebar"><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.module_TimezoneService.html">TimezoneService</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_helpers.html">helpers</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.Binary.html">Binary</a></div><div class="sidebar-section-children"><a href="ICAL.Component.html">Component</a></div><div class="sidebar-section-children"><a href="ICAL.ComponentParser.html">ComponentParser</a></div><div class="sidebar-section-children"><a href="ICAL.Duration.html">Duration</a></div><div class="sidebar-section-children"><a href="ICAL.Event.html">Event</a></div><div class="sidebar-section-children"><a href="ICAL.Period.html">Period</a></div><div class="sidebar-section-children"><a href="ICAL.Property.html">Property</a></div><div class="sidebar-section-children"><a href="ICAL.Recur.html">Recur</a></div><div class="sidebar-section-children"><a href="ICAL.RecurExpansion.html">RecurExpansion</a></div><div class="sidebar-section-children"><a href="ICAL.RecurIterator.html">RecurIterator</a></div><div class="sidebar-section-children"><a href="ICAL.Time.html">Time</a></div><div class="sidebar-section-children"><a href="ICAL.Timezone.html">Timezone</a></div><div class="sidebar-section-children"><a href="ICAL.UtcOffset.html">UtcOffset</a></div><div class="sidebar-section-children"><a href="ICAL.VCardTime.html">VCardTime</a></div><div class="sidebar-section-children"><a href="ICAL.parse.ParserError.html">ParserError</a></div><div class="sidebar-section-children"><a href="InvalidRecurrenceRuleError.html">InvalidRecurrenceRuleError</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-namespaces"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.html">ICAL</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#Geo">Geo</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#dark-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">time.js</h1></header><article><pre class="prettyprint source lang-js"><code>/* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  * Portions Copyright (C) Philipp Kewisch */
 
 import Timezone from "./timezone.js";
 import Duration from "./duration.js";
+import Period from "./period.js";
 import design from "./design.js";
+// needed for typescript type resolution
+// eslint-disable-next-line no-unused-vars
+import Property from "./property.js";
 import TimezoneService from "./timezone_service.js";
 import { strictParseInt, trunc, pad2 } from "./helpers.js";
+
+/**
+ * This lets typescript resolve our custom types in the
+ * generated d.ts files (jsdoc typedefs are converted to typescript types).
+ * Ignore prevents the typedefs from being documented more than once.
+ *
+ * @ignore
+ * @typedef {import("./types.js").weekDay} weekDay
+ * Imports the 'weekDay' type from the "types.js" module
+ *
+ * @ignore
+ * @typedef {import("./types.js").timeInit} timeInit
+ * Imports the 'timeInit' type from the "types.js" module
+ */
 
 /**
  * @classdesc
@@ -28,8 +46,7 @@ import { strictParseInt, trunc, pad2 } from "./helpers.js";
  * });
  *
  *
- * @alias ICAL.Time
- * @class
+ * @memberof ICAL
 */
 class Time {
   static _dowCache = {};
@@ -77,7 +94,7 @@ class Time {
    *
    * @param {Number} aDayOfYear     The day of year
    * @param {Number} aYear          The year to create the instance in
-   * @return {ICAL.Time}            The created instance with the calculated date
+   * @return {Time}                 The created instance with the calculated date
    */
   static fromDayOfYear(aDayOfYear, aYear) {
     let year = aYear;
@@ -118,7 +135,7 @@ class Time {
    *
    * @deprecated                Use {@link ICAL.Time.fromDateString} instead
    * @param {String} str        The string to create from
-   * @return {ICAL.Time}        The date/time instance
+   * @return {Time}             The date/time instance
    */
   static fromStringv2(str) {
     return new Time({
@@ -133,7 +150,7 @@ class Time {
    * Returns a new ICAL.Time instance from a date string, e.g 2015-01-02.
    *
    * @param {String} aValue     The string to create from
-   * @return {ICAL.Time}        The date/time instance
+   * @return {Time}             The date/time instance
    */
   static fromDateString(aValue) {
     // Dates should have no timezone.
@@ -156,8 +173,8 @@ class Time {
    * from the property's TZID parameter.
    *
    * @param {String} aValue         The string to create from
-   * @param {ICAL.Property=} prop   The property the date belongs to
-   * @return {ICAL.Time}            The date/time instance
+   * @param {Property=} prop        The property the date belongs to
+   * @return {Time}                 The date/time instance
    */
   static fromDateTimeString(aValue, prop) {
     if (aValue.length &lt; 19) {
@@ -169,7 +186,7 @@ class Time {
     let zone;
     let zoneId;
 
-    if (aValue[19] &amp;&amp; aValue[19] === 'Z') {
+    if (aValue.slice(-1) === 'Z') {
       zone = Timezone.utcTimezone;
     } else if (prop) {
       zoneId = prop.getParameter('tzid');
@@ -212,8 +229,8 @@ class Time {
    * Returns a new ICAL.Time instance from a date or date-time string,
    *
    * @param {String} aValue         The string to create from
-   * @param {ICAL.Property=} prop   The property the date belongs to
-   * @return {ICAL.Time}            The date/time instance
+   * @param {Property=} prop        The property the date belongs to
+   * @return {Time}                 The date/time instance
    */
   static fromString(aValue, aProperty) {
     if (aValue.length > 10) {
@@ -226,8 +243,8 @@ class Time {
   /**
    * Creates a new ICAL.Time instance from the given Javascript Date.
    *
-   * @param {?Date} aDate     The Javascript Date to read, or null to reset
-   * @param {Boolean} useUTC  If true, the UTC values of the date will be used
+   * @param {?Date} aDate             The Javascript Date to read, or null to reset
+   * @param {Boolean} [useUTC=false]  If true, the UTC values of the date will be used
    */
   static fromJSDate(aDate, useUTC) {
     let tt = new Time();
@@ -237,16 +254,8 @@ class Time {
   /**
    * Creates a new ICAL.Time instance from the the passed data object.
    *
-   * @param {Object} aData            Time initialization
-   * @param {Number=} aData.year      The year for this date
-   * @param {Number=} aData.month     The month for this date
-   * @param {Number=} aData.day       The day for this date
-   * @param {Number=} aData.hour      The hour for this date
-   * @param {Number=} aData.minute    The minute for this date
-   * @param {Number=} aData.second    The second for this date
-   * @param {Boolean=} aData.isDate   If true, the instance represents a date
-   *                                    (as opposed to a date-time)
-   * @param {ICAL.Timezone=} aZone    Timezone this position occurs in
+   * @param {timeInit} aData          Time initialization
+   * @param {Timezone=} aZone         Timezone this position occurs in
    */
   static fromData = function fromData(aData, aZone) {
     let t = new Time();
@@ -258,7 +267,7 @@ class Time {
    * The instance is “floating” - has no timezone relation.
    * To create an instance considering the time zone, call
    * ICAL.Time.fromJSDate(new Date(), true)
-   * @return {ICAL.Time}
+   * @return {Time}
    */
   static now() {
     return Time.fromJSDate(new Date(), false);
@@ -267,10 +276,10 @@ class Time {
   /**
    * Returns the date on which ISO week number 1 starts.
    *
-   * @see ICAL.Time#weekNumber
+   * @see Time#weekNumber
    * @param {Number} aYear                  The year to search in
-   * @param {ICAL.Time.weekDay=} aWeekStart The week start weekday, used for calculation.
-   * @return {ICAL.Time}                    The date on which week number 1 starts
+   * @param {weekDay=} aWeekStart           The week start weekday, used for calculation.
+   * @return {Time}                         The date on which week number 1 starts
    */
   static weekOneStarts(aYear, aWeekStart) {
     let t = Time.fromData({
@@ -315,7 +324,7 @@ class Time {
   static #epochTime = null;
   /**
    * January 1st, 1970 as an ICAL.Time.
-   * @type {ICAL.Time}
+   * @type {Time}
    * @constant
    * @instance
    */
@@ -355,14 +364,6 @@ class Time {
     [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]
   ];
 
-  /**
-   * The weekday, 1 = SUNDAY, 7 = SATURDAY. Access via
-   * ICAL.Time.MONDAY, ICAL.Time.TUESDAY, ...
-   *
-   * @typedef {Number} weekDay
-   * @memberof ICAL.Time
-   */
-
   static SUNDAY = 1;
   static MONDAY = 2;
   static TUESDAY = 3;
@@ -381,29 +382,26 @@ class Time {
   /**
    * Creates a new ICAL.Time instance.
    *
-   * @param {Object} data           Time initialization
-   * @param {Number=} data.year     The year for this date
-   * @param {Number=} data.month    The month for this date
-   * @param {Number=} data.day      The day for this date
-   * @param {Number=} data.hour     The hour for this date
-   * @param {Number=} data.minute   The minute for this date
-   * @param {Number=} data.second   The second for this date
-   * @param {Boolean=} data.isDate  If true, the instance represents a date (as
-   *                                  opposed to a date-time)
-   * @param {ICAL.Timezone} zone timezone this position occurs in
+   * @param {timeInit} data           Time initialization
+   * @param {Timezone} zone           timezone this position occurs in
    */
   constructor(data, zone) {
     this.wrappedJSObject = this;
-    let time = this._time = Object.create(null);
+
+    /**
+     * @type {timeInit}
+     * @private
+     */
+    this._time = Object.create(null);
 
     /* time defaults */
-    time.year = 0;
-    time.month = 1;
-    time.day = 1;
-    time.hour = 0;
-    time.minute = 0;
-    time.second = 0;
-    time.isDate = false;
+    this._time.year = 0;
+    this._time.month = 1;
+    this._time.day = 1;
+    this._time.hour = 0;
+    this._time.minute = 0;
+    this._time.second = 0;
+    this._time.isDate = false;
 
     this.fromData(data, zone);
   }
@@ -420,7 +418,6 @@ class Time {
   /**
    * The type name, to be used in the jCal object. This value may change and
    * is strictly defined by the {@link ICAL.Time#isDate isDate} member.
-   * @readonly
    * @type {String}
    * @default "date-time"
    */
@@ -430,7 +427,7 @@ class Time {
 
   /**
    * The timezone for this time.
-   * @type {ICAL.Timezone}
+   * @type {Timezone}
    */
   zone = null;
 
@@ -445,9 +442,126 @@ class Time {
   _pendingNormalization = false;
 
   /**
+   * The year of this date.
+   * @type {Number}
+   */
+  get year() {
+    return this._getTimeAttr('year');
+  }
+
+  set year(val) {
+    this._setTimeAttr('year', val);
+  }
+
+  /**
+   * The month of this date.
+   * @type {Number}
+   */
+  get month() {
+    return this._getTimeAttr('month');
+  }
+
+  set month(val) {
+    this._setTimeAttr('month', val);
+  }
+
+  /**
+   * The day of this date.
+   * @type {Number}
+   */
+  get day() {
+    return this._getTimeAttr('day');
+  }
+
+  set day(val) {
+    this._setTimeAttr('day', val);
+  }
+
+  /**
+   * The hour of this date-time.
+   * @type {Number}
+   */
+  get hour() {
+    return this._getTimeAttr('hour');
+  }
+
+  set hour(val) {
+    this._setTimeAttr('hour', val);
+  }
+
+  /**
+   * The minute of this date-time.
+   * @type {Number}
+   */
+  get minute() {
+    return this._getTimeAttr('minute');
+  }
+
+  set minute(val) {
+    this._setTimeAttr('minute', val);
+  }
+
+  /**
+   * The second of this date-time.
+   * @type {Number}
+   */
+  get second() {
+    return this._getTimeAttr('second');
+  }
+
+  set second(val) {
+    this._setTimeAttr('second', val);
+  }
+
+  /**
+   * If true, the instance represents a date (as opposed to a date-time)
+   * @type {Boolean}
+   */
+  get isDate() {
+    return this._getTimeAttr('isDate');
+  }
+
+  set isDate(val) {
+    this._setTimeAttr('isDate', val);
+  }
+
+  /**
+   * @private
+   * @param {String} attr             Attribute to get (one of: year, month,
+   *                                  day, hour, minute, second, isDate)
+   * @return {Number|Boolean}         Current value for the attribute
+   */
+  _getTimeAttr(attr) {
+    if (this._pendingNormalization) {
+      this._normalize();
+      this._pendingNormalization = false;
+    }
+
+    return this._time[attr];
+  }
+
+  /**
+   * @private
+   * @param {String} attr             Attribute to set (one of: year, month,
+   *                                  day, hour, minute, second, isDate)
+   * @param {Number|Boolean} val      New value for the attribute
+   */
+  _setTimeAttr(attr, val) {
+    // Check if isDate will be set and if was not set to normalize date.
+    // This avoids losing days when seconds, minutes and hours are zeroed
+    // what normalize will do when time is a date.
+    if (attr === "isDate" &amp;&amp; val &amp;&amp; !this._time.isDate) {
+      this.adjust(0, 0, 0, 0);
+    }
+    this._cachedUnixTime = null;
+    this._pendingNormalization = true;
+    this._time[attr] = val;
+  }
+
+  /**
    * Returns a clone of the time object.
    *
-   * @return {ICAL.Time}              The cloned object
+   * @return {Time}              The cloned object
    */
   clone() {
     return new Time(this._time, this.zone);
@@ -470,7 +584,7 @@ class Time {
    * @param {Number} hour             The hour to set
    * @param {Number} minute           The minute to set
    * @param {Number} second           The second to set
-   * @param {ICAL.Timezone} timezone  The timezone to set
+   * @param {Timezone} timezone       The timezone to set
    */
   resetTo(year, month, day, hour, minute, second, timezone) {
     this.fromData({
@@ -487,8 +601,8 @@ class Time {
   /**
    * Set up the current instance from the Javascript date value.
    *
-   * @param {?Date} aDate     The Javascript Date to read, or null to reset
-   * @param {Boolean} useUTC  If true, the UTC values of the date will be used
+   * @param {?Date} aDate             The Javascript Date to read, or null to reset
+   * @param {Boolean} [useUTC=false]  If true, the UTC values of the date will be used
    */
   fromJSDate(aDate, useUTC) {
     if (!aDate) {
@@ -519,16 +633,8 @@ class Time {
   /**
    * Sets up the current instance using members from the passed data object.
    *
-   * @param {Object} aData            Time initialization
-   * @param {Number=} aData.year      The year for this date
-   * @param {Number=} aData.month     The month for this date
-   * @param {Number=} aData.day       The day for this date
-   * @param {Number=} aData.hour      The hour for this date
-   * @param {Number=} aData.minute    The minute for this date
-   * @param {Number=} aData.second    The second for this date
-   * @param {Boolean=} aData.isDate   If true, the instance represents a date
-   *                                    (as opposed to a date-time)
-   * @param {ICAL.Timezone=} aZone    Timezone this position occurs in
+   * @param {timeInit} aData          Time initialization
+   * @param {Timezone=} aZone         Timezone this position occurs in
    */
   fromData(aData, aZone) {
     if (aData) {
@@ -571,9 +677,9 @@ class Time {
 
   /**
    * Calculate the day of week.
-   * @param {ICAL.Time.weekDay=} aWeekStart
+   * @param {weekDay=} aWeekStart
    *        The week start weekday, defaults to SUNDAY
-   * @return {ICAL.Time.weekDay}
+   * @return {weekDay}
    */
   dayOfWeek(aWeekStart) {
     let firstDow = aWeekStart || Time.SUNDAY;
@@ -616,9 +722,9 @@ class Time {
    * week. The resulting ICAL.Time instance is of icaltype date, even if this
    * is a date-time.
    *
-   * @param {ICAL.Time.weekDay=} aWeekStart
+   * @param {weekDay=} aWeekStart
    *        The week start weekday, defaults to SUNDAY
-   * @return {ICAL.Time}      The start of the week (cloned)
+   * @return {Time}      The start of the week (cloned)
    */
   startOfWeek(aWeekStart) {
     let firstDow = aWeekStart || Time.SUNDAY;
@@ -636,9 +742,9 @@ class Time {
    * The resulting ICAL.Time instance is of icaltype date, even if this is a
    * date-time.
    *
-   * @param {ICAL.Time.weekDay=} aWeekStart
+   * @param {weekDay=} aWeekStart
    *        The week start weekday, defaults to SUNDAY
-   * @return {ICAL.Time}      The end of the week (cloned)
+   * @return {Time}      The end of the week (cloned)
    */
   endOfWeek(aWeekStart) {
     let firstDow = aWeekStart || Time.SUNDAY;
@@ -656,7 +762,7 @@ class Time {
    * month. The resulting ICAL.Time instance is of icaltype date, even if
    * this is a date-time.
    *
-   * @return {ICAL.Time}      The start of the month (cloned)
+   * @return {Time}      The start of the month (cloned)
    */
   startOfMonth() {
     let result = this.clone();
@@ -673,7 +779,7 @@ class Time {
    * month.  The resulting ICAL.Time instance is of icaltype date, even if
    * this is a date-time.
    *
-   * @return {ICAL.Time}      The end of the month (cloned)
+   * @return {Time}      The end of the month (cloned)
    */
   endOfMonth() {
     let result = this.clone();
@@ -690,7 +796,7 @@ class Time {
    * year. The resulting ICAL.Time instance is of icaltype date, even if
    * this is a date-time.
    *
-   * @return {ICAL.Time}      The start of the year (cloned)
+   * @return {Time}      The start of the year (cloned)
    */
   startOfYear() {
     let result = this.clone();
@@ -708,7 +814,7 @@ class Time {
    * year.  The resulting ICAL.Time instance is of icaltype date, even if
    * this is a date-time.
    *
-   * @return {ICAL.Time}      The end of the year (cloned)
+   * @return {Time}      The end of the year (cloned)
    */
   endOfYear() {
     let result = this.clone();
@@ -725,7 +831,7 @@ class Time {
    * First calculates the start of the week, then returns the day of year for
    * this date. If the day falls into the previous year, the day is zero or negative.
    *
-   * @param {ICAL.Time.weekDay=} aFirstDayOfWeek
+   * @param {weekDay=} aFirstDayOfWeek
    *        The week start weekday, defaults to SUNDAY
    * @return {Number}     The calculated day of year
    */
@@ -839,7 +945,7 @@ class Time {
    * month.  Will always return false when rule resolves outside of current
    * month.
    *
-   * @param {ICAL.Time.weekDay} aDayOfWeek       Day of week to check
+   * @param {weekDay} aDayOfWeek                 Day of week to check
    * @param {Number} aPos                        Relative position
    * @return {Boolean}                           True, if it is the nth weekday
    */
@@ -870,8 +976,8 @@ class Time {
    * different week start is specified, this will also affect the week
    * number.
    *
-   * @see ICAL.Time.weekOneStarts
-   * @param {ICAL.Time.weekDay} aWeekStart        The weekday the week starts with
+   * @see Time.weekOneStarts
+   * @param {weekDay} aWeekStart                  The weekday the week starts with
    * @return {Number}                             The ISO week number
    */
   weekNumber(aWeekStart) {
@@ -892,13 +998,11 @@ class Time {
       week1 = Time.weekOneStarts(isoyear + 1, aWeekStart);
       if (dt.compare(week1) &lt; 0) {
         week1 = Time.weekOneStarts(isoyear, aWeekStart);
-      } else {
-        isoyear++;
       }
     } else {
       week1 = Time.weekOneStarts(isoyear, aWeekStart);
       if (dt.compare(week1) &lt; 0) {
-        week1 = Time.weekOneStarts(--isoyear, aWeekStart);
+        week1 = Time.weekOneStarts(isoyear - 1, aWeekStart);
       }
     }
 
@@ -912,7 +1016,7 @@ class Time {
    * Adds the duration to the current time. The instance is modified in
    * place.
    *
-   * @param {ICAL.Duration} aDuration         The duration to add
+   * @param {Duration} aDuration         The duration to add
    */
   addDuration(aDuration) {
     let mult = (aDuration.isNegative ? -1 : 1);
@@ -945,8 +1049,8 @@ class Time {
    * the relative difference between two time objects excluding their
    * timezone differences.
    *
-   * @param {ICAL.Time} aDate     The date to subtract
-   * @return {ICAL.Duration}      The difference as a duration
+   * @param {Time} aDate     The date to subtract
+   * @return {Duration}      The difference as a duration
    */
   subtractDate(aDate) {
     let unixTime = this.toUnixTime() + this.utcOffset();
@@ -957,8 +1061,8 @@ class Time {
   /**
    * Subtract the date details, taking timezones into account.
    *
-   * @param {ICAL.Time} aDate  The date to subtract
-   * @return {ICAL.Duration}  The difference in duration
+   * @param {Time} aDate  The date to subtract
+   * @return {Duration}   The difference in duration
    */
   subtractDateTz(aDate) {
     let unixTime = this.toUnixTime();
@@ -967,45 +1071,49 @@ class Time {
   }
 
   /**
-   * Compares the ICAL.Time instance with another one.
+   * Compares the ICAL.Time instance with another one, or a period.
    *
-   * @param {ICAL.Duration} aOther        The instance to compare with
-   * @return {Number}                     -1, 0 or 1 for less/equal/greater
+   * @param {Time|Period} aOther                  The instance to compare with
+   * @return {Number}                             -1, 0 or 1 for less/equal/greater
    */
   compare(other) {
-    let a = this.toUnixTime();
-    let b = other.toUnixTime();
+    if (other instanceof Period) {
+      return -1 * other.compare(this);
+    } else {
+      let a = this.toUnixTime();
+      let b = other.toUnixTime();
 
-    if (a > b) return 1;
-    if (b > a) return -1;
-    return 0;
+      if (a > b) return 1;
+      if (b > a) return -1;
+      return 0;
+    }
   }
 
   /**
    * Compares only the date part of this instance with another one.
    *
-   * @param {ICAL.Duration} other         The instance to compare with
-   * @param {ICAL.Timezone} tz            The timezone to compare in
+   * @param {Time} other                  The instance to compare with
+   * @param {Timezone} tz                 The timezone to compare in
    * @return {Number}                     -1, 0 or 1 for less/equal/greater
    */
   compareDateOnlyTz(other, tz) {
     let a = this.convertToZone(tz);
     let b = other.convertToZone(tz);
-    let rc = 0;
+    let rc;
 
     if ((rc = Time._cmp_attr(a, b, "year")) != 0) return rc;
     if ((rc = Time._cmp_attr(a, b, "month")) != 0) return rc;
     if ((rc = Time._cmp_attr(a, b, "day")) != 0) return rc;
 
-    return rc;
+    return 0;
   }
 
   /**
    * Convert the instance into another timezone. The returned ICAL.Time
    * instance is always a copy.
    *
-   * @param {ICAL.Timezone} zone      The zone to convert to
-   * @return {ICAL.Time}              The copy, converted to the zone
+   * @param {Timezone} zone      The zone to convert to
+   * @return {Time}              The copy, converted to the zone
    */
   convertToZone(zone) {
     let copy = this.clone();
@@ -1295,40 +1403,4 @@ class Time {
   }
 }
 export default Time;
-
-(function setupNormalizeAttributes() {
-  // This needs to run before any instances are created!
-  function defineAttr(attr) {
-    Object.defineProperty(Time.prototype, attr, {
-      get: function getTimeAttr() {
-        if (this._pendingNormalization) {
-          this._normalize();
-          this._pendingNormalization = false;
-        }
-
-        return this._time[attr];
-      },
-      set: function setTimeAttr(val) {
-        // Check if isDate will be set and if was not set to normalize date.
-        // This avoids losing days when seconds, minutes and hours are zeroed
-        // what normalize will do when time is a date.
-        if (attr === "isDate" &amp;&amp; val &amp;&amp; !this._time.isDate) {
-          this.adjust(0, 0, 0, 0);
-        }
-        this._cachedUnixTime = null;
-        this._pendingNormalization = true;
-        this._time[attr] = val;
-      }
-    });
-
-  }
-
-    defineAttr("year");
-    defineAttr("month");
-    defineAttr("day");
-    defineAttr("hour");
-    defineAttr("minute");
-    defineAttr("second");
-    defineAttr("isDate");
-})();
-</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.module_TimezoneService.html">TimezoneService</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_helpers.html">helpers</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.Binary.html">Binary</a></div><div class="sidebar-section-children"><a href="ICAL.Component.html">Component</a></div><div class="sidebar-section-children"><a href="ICAL.ComponentParser.html">ComponentParser</a></div><div class="sidebar-section-children"><a href="ICAL.Duration.html">Duration</a></div><div class="sidebar-section-children"><a href="ICAL.Event.html">Event</a></div><div class="sidebar-section-children"><a href="ICAL.Period.html">Period</a></div><div class="sidebar-section-children"><a href="ICAL.Property.html">Property</a></div><div class="sidebar-section-children"><a href="ICAL.Recur.html">Recur</a></div><div class="sidebar-section-children"><a href="ICAL.RecurExpansion.html">RecurExpansion</a></div><div class="sidebar-section-children"><a href="ICAL.RecurIterator.html">RecurIterator</a></div><div class="sidebar-section-children"><a href="ICAL.Time.html">Time</a></div><div class="sidebar-section-children"><a href="ICAL.Timezone.html">Timezone</a></div><div class="sidebar-section-children"><a href="ICAL.UtcOffset.html">UtcOffset</a></div><div class="sidebar-section-children"><a href="ICAL.VCardTime.html">VCardTime</a></div><div class="sidebar-section-children"><a href="ICAL.parse.ParserError.html">ParserError</a></div><div class="sidebar-section-children"><a href="InvalidRecurrenceRuleError.html">InvalidRecurrenceRuleError</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-namespaces"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.html">ICAL</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#dark-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
+</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.module_TimezoneService.html">TimezoneService</a></div><div class="sidebar-section-children"><a href="ICAL.module_design.html">design</a></div><div class="sidebar-section-children"><a href="ICAL.module_helpers.html">helpers</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.Binary.html">Binary</a></div><div class="sidebar-section-children"><a href="ICAL.Component.html">Component</a></div><div class="sidebar-section-children"><a href="ICAL.ComponentParser.html">ComponentParser</a></div><div class="sidebar-section-children"><a href="ICAL.Duration.html">Duration</a></div><div class="sidebar-section-children"><a href="ICAL.Event.html">Event</a></div><div class="sidebar-section-children"><a href="ICAL.Period.html">Period</a></div><div class="sidebar-section-children"><a href="ICAL.Property.html">Property</a></div><div class="sidebar-section-children"><a href="ICAL.Recur.html">Recur</a></div><div class="sidebar-section-children"><a href="ICAL.RecurExpansion.html">RecurExpansion</a></div><div class="sidebar-section-children"><a href="ICAL.RecurIterator.html">RecurIterator</a></div><div class="sidebar-section-children"><a href="ICAL.Time.html">Time</a></div><div class="sidebar-section-children"><a href="ICAL.Timezone.html">Timezone</a></div><div class="sidebar-section-children"><a href="ICAL.UtcOffset.html">UtcOffset</a></div><div class="sidebar-section-children"><a href="ICAL.VCardTime.html">VCardTime</a></div><div class="sidebar-section-children"><a href="ICAL.parse.ParserError.html">ParserError</a></div><div class="sidebar-section-children"><a href="InvalidRecurrenceRuleError.html">InvalidRecurrenceRuleError</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-namespaces"><div>Namespaces</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="ICAL.html">ICAL</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#Geo">Geo</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#dark-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
